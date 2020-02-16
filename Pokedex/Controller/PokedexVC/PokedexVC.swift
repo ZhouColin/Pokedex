@@ -24,15 +24,26 @@ class PokedexVC: UIViewController, isAbleToReceiveData {
     var advancedDictNumReceived: [String: Int] = [:]
     
     func pass(data: [String:Bool]) {
-        advancedDictReceived = data
-        filterContentForType(advancedDictReceived)
-        isFilteringBool = true
+        var test = true
+        for (s, i) in data {
+            if (i == true) {
+                test = false
+            }
+        }
+        
+        if (test == false) {
+            advancedDictReceived = data
+            filterContentForType(advancedDictReceived)
+            isFilteringBool = true
+        } else {
+            
+        }
     }
     
     func passInt(data: [String : Int]) {
-        advancedDictNumReceived = data
-        filterContentForType(advancedDictReceived)
-        isFilteringBool = true
+//        advancedDictNumReceived = data
+//        filterContentForType(advancedDictReceived)
+//        isFilteringBool = true
     }
     
     
